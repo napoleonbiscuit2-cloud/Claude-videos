@@ -1,0 +1,1532 @@
+[
+{
+"text": "Ton",
+"type": "word",
+"start": 0.0,
+"end": 0.16
+},
+{
+"text": "cerveau",
+"type": "word",
+"start": 0.24,
+"end": 0.56
+},
+{
+"text": "ne",
+"type": "word",
+"start": 0.64,
+"end": 0.72
+},
+{
+"text": "pèse",
+"type": "word",
+"start": 0.747,
+"end": 0.96
+},
+{
+"text": "que",
+"type": "word",
+"start": 1.0,
+"end": 1.04
+},
+{
+"text": "2 %",
+"type": "word",
+"start": 1.2,
+"end": 1.32
+},
+{
+"text": "de",
+"type": "word",
+"start": 1.6,
+"end": 1.8
+},
+{
+"text": "ton",
+"type": "word",
+"start": 1.84,
+"end": 2.0
+},
+{
+"text": "corps,",
+"type": "word",
+"start": 2.08,
+"end": 2.48
+},
+{
+"text": "mais",
+"type": "word",
+"start": 2.52,
+"end": 2.6
+},
+{
+"text": "il",
+"type": "word",
+"start": 2.64,
+"end": 2.72
+},
+{
+"text": "consomme",
+"type": "word",
+"start": 2.84,
+"end": 3.28
+},
+{
+"text": "20 %",
+"type": "word",
+"start": 3.36,
+"end": 3.48
+},
+{
+"text": "de",
+"type": "word",
+"start": 3.76,
+"end": 4.0
+},
+{
+"text": "ton",
+"type": "word",
+"start": 4.08,
+"end": 4.16
+},
+{
+"text": "énergie.",
+"type": "word",
+"start": 4.4,
+"end": 4.88
+},
+{
+"text": "Regarde",
+"type": "word",
+"start": 4.96,
+"end": 5.28
+},
+{
+"text": "ce",
+"type": "word",
+"start": 5.36,
+"end": 5.4
+},
+{
+"text": "que",
+"type": "word",
+"start": 5.44,
+"end": 5.52
+},
+{
+"text": "fait",
+"type": "word",
+"start": 5.6,
+"end": 5.76
+},
+{
+"text": "chaque",
+"type": "word",
+"start": 5.8,
+"end": 6.0
+},
+{
+"text": "partie.",
+"type": "word",
+"start": 6.12,
+"end": 6.8
+},
+{
+"text": "Le",
+"type": "word",
+"start": 6.88,
+"end": 6.96
+},
+{
+"text": "lobe",
+"type": "word",
+"start": 7.08,
+"end": 7.2
+},
+{
+"text": "frontal",
+"type": "word",
+"start": 7.28,
+"end": 7.76
+},
+{
+"text": "le",
+"type": "word",
+"start": 8.053,
+"end": 8.08
+},
+{
+"text": "patron.",
+"type": "word",
+"start": 8.24,
+"end": 8.88
+},
+{
+"text": "Ici,",
+"type": "word",
+"start": 8.96,
+"end": 9.36
+},
+{
+"text": "tu",
+"type": "word",
+"start": 9.44,
+"end": 9.52
+},
+{
+"text": "décides,",
+"type": "word",
+"start": 9.6,
+"end": 10.16
+},
+{
+"text": "tu",
+"type": "word",
+"start": 10.24,
+"end": 10.32
+},
+{
+"text": "planifies",
+"type": "word",
+"start": 10.44,
+"end": 10.96
+},
+{
+"text": "et",
+"type": "word",
+"start": 11.04,
+"end": 11.12
+},
+{
+"text": "tu",
+"type": "word",
+"start": 11.2,
+"end": 11.28
+},
+{
+"text": "contrôles",
+"type": "word",
+"start": 11.44,
+"end": 11.76
+},
+{
+"text": "tes",
+"type": "word",
+"start": 11.8,
+"end": 11.84
+},
+{
+"text": "impulsions.",
+"type": "word",
+"start": 11.92,
+"end": 12.64
+},
+{
+"text": "Fait",
+"type": "word",
+"start": 12.68,
+"end": 12.8
+},
+{
+"text": "curieux",
+"type": "word",
+"start": 12.88,
+"end": 13.2
+},
+{
+"text": "c'est",
+"type": "word",
+"start": 13.48,
+"end": 13.52
+},
+{
+"text": "la",
+"type": "word",
+"start": 13.6,
+"end": 13.76
+},
+{
+"text": "dernière",
+"type": "word",
+"start": 13.84,
+"end": 14.16
+},
+{
+"text": "partie",
+"type": "word",
+"start": 14.28,
+"end": 14.48
+},
+{
+"text": "à",
+"type": "word",
+"start": 14.52,
+"end": 14.56
+},
+{
+"text": "mûrir.",
+"type": "word",
+"start": 14.6,
+"end": 15.12
+},
+{
+"text": "Elle",
+"type": "word",
+"start": 15.16,
+"end": 15.28
+},
+{
+"text": "ne",
+"type": "word",
+"start": 15.32,
+"end": 15.36
+},
+{
+"text": "termine",
+"type": "word",
+"start": 15.44,
+"end": 15.76
+},
+{
+"text": "que",
+"type": "word",
+"start": 15.8,
+"end": 15.84
+},
+{
+"text": "vers",
+"type": "word",
+"start": 15.92,
+"end": 16.08
+},
+{
+"text": "25",
+"type": "word",
+"start": 16.16,
+"end": 16.56
+},
+{
+"text": "ans.",
+"type": "word",
+"start": 16.6,
+"end": 17.2
+},
+{
+"text": "Le",
+"type": "word",
+"start": 17.24,
+"end": 17.28
+},
+{
+"text": "lobe",
+"type": "word",
+"start": 17.36,
+"end": 17.6
+},
+{
+"text": "occipital",
+"type": "word",
+"start": 17.68,
+"end": 18.4
+},
+{
+"text": "la",
+"type": "word",
+"start": 18.693,
+"end": 18.72
+},
+{
+"text": "vision.",
+"type": "word",
+"start": 18.88,
+"end": 19.52
+},
+{
+"text": "Tes",
+"type": "word",
+"start": 19.6,
+"end": 19.68
+},
+{
+"text": "yeux",
+"type": "word",
+"start": 19.76,
+"end": 19.92
+},
+{
+"text": "sont",
+"type": "word",
+"start": 19.973,
+"end": 20.08
+},
+{
+"text": "devant,",
+"type": "word",
+"start": 20.2,
+"end": 20.56
+},
+{
+"text": "mais",
+"type": "word",
+"start": 20.6,
+"end": 20.72
+},
+{
+"text": "tu",
+"type": "word",
+"start": 20.8,
+"end": 20.88
+},
+{
+"text": "vois",
+"type": "word",
+"start": 20.92,
+"end": 21.12
+},
+{
+"text": "avec",
+"type": "word",
+"start": 21.2,
+"end": 21.44
+},
+{
+"text": "l'arrière",
+"type": "word",
+"start": 21.52,
+"end": 21.92
+},
+{
+"text": "de",
+"type": "word",
+"start": 21.96,
+"end": 22.0
+},
+{
+"text": "ta",
+"type": "word",
+"start": 22.08,
+"end": 22.16
+},
+{
+"text": "tête.",
+"type": "word",
+"start": 22.24,
+"end": 22.72
+},
+{
+"text": "Ici,",
+"type": "word",
+"start": 22.8,
+"end": 23.2
+},
+{
+"text": "le",
+"type": "word",
+"start": 23.28,
+"end": 23.36
+},
+{
+"text": "cerveau",
+"type": "word",
+"start": 23.44,
+"end": 23.76
+},
+{
+"text": "transforme",
+"type": "word",
+"start": 24.0,
+"end": 24.32
+},
+{
+"text": "la",
+"type": "word",
+"start": 24.36,
+"end": 24.4
+},
+{
+"text": "lumière",
+"type": "word",
+"start": 24.48,
+"end": 24.96
+},
+{
+"text": "en",
+"type": "word",
+"start": 25.04,
+"end": 25.12
+},
+{
+"text": "images.",
+"type": "word",
+"start": 25.2,
+"end": 25.88
+},
+{
+"text": "L'hippocampe",
+"type": "word",
+"start": 26.16,
+"end": 26.8
+},
+{
+"text": "la",
+"type": "word",
+"start": 27.12,
+"end": 27.2
+},
+{
+"text": "mémoire.",
+"type": "word",
+"start": 27.28,
+"end": 28.08
+},
+{
+"text": "Il",
+"type": "word",
+"start": 28.12,
+"end": 28.16
+},
+{
+"text": "garde",
+"type": "word",
+"start": 28.24,
+"end": 28.56
+},
+{
+"text": "tes",
+"type": "word",
+"start": 28.64,
+"end": 28.72
+},
+{
+"text": "souvenirs",
+"type": "word",
+"start": 28.773,
+"end": 29.28
+},
+{
+"text": "et",
+"type": "word",
+"start": 29.32,
+"end": 29.36
+},
+{
+"text": "t'aide",
+"type": "word",
+"start": 29.52,
+"end": 29.68
+},
+{
+"text": "à",
+"type": "word",
+"start": 29.707,
+"end": 29.733
+},
+{
+"text": "t'orienter.",
+"type": "word",
+"start": 29.76,
+"end": 30.48
+},
+{
+"text": "Les",
+"type": "word",
+"start": 30.56,
+"end": 30.64
+},
+{
+"text": "chauffeurs",
+"type": "word",
+"start": 30.68,
+"end": 30.96
+},
+{
+"text": "de",
+"type": "word",
+"start": 31.0,
+"end": 31.04
+},
+{
+"text": "taxi",
+"type": "word",
+"start": 31.12,
+"end": 31.36
+},
+{
+"text": "de",
+"type": "word",
+"start": 31.44,
+"end": 31.48
+},
+{
+"text": "Londres,",
+"type": "word",
+"start": 31.52,
+"end": 31.92
+},
+{
+"text": "qui",
+"type": "word",
+"start": 32.0,
+"end": 32.08
+},
+{
+"text": "mémorisent",
+"type": "word",
+"start": 32.133,
+"end": 32.56
+},
+{
+"text": "des",
+"type": "word",
+"start": 32.68,
+"end": 32.8
+},
+{
+"text": "milliers",
+"type": "word",
+"start": 32.92,
+"end": 33.2
+},
+{
+"text": "de",
+"type": "word",
+"start": 33.24,
+"end": 33.28
+},
+{
+"text": "rues,",
+"type": "word",
+"start": 33.36,
+"end": 33.6
+},
+{
+"text": "ont",
+"type": "word",
+"start": 33.68,
+"end": 33.76
+},
+{
+"text": "une",
+"type": "word",
+"start": 33.84,
+"end": 33.92
+},
+{
+"text": "partie",
+"type": "word",
+"start": 34.04,
+"end": 34.2
+},
+{
+"text": "de",
+"type": "word",
+"start": 34.24,
+"end": 34.32
+},
+{
+"text": "l'hippocampe",
+"type": "word",
+"start": 34.36,
+"end": 34.96
+},
+{
+"text": "plus",
+"type": "word",
+"start": 35.04,
+"end": 35.12
+},
+{
+"text": "grande",
+"type": "word",
+"start": 35.2,
+"end": 35.44
+},
+{
+"text": "que",
+"type": "word",
+"start": 35.48,
+"end": 35.52
+},
+{
+"text": "la",
+"type": "word",
+"start": 35.6,
+"end": 35.68
+},
+{
+"text": "moyenne.",
+"type": "word",
+"start": 35.72,
+"end": 36.56
+},
+{
+"text": "L'amygdale",
+"type": "word",
+"start": 36.64,
+"end": 37.28
+},
+{
+"text": "la",
+"type": "word",
+"start": 37.573,
+"end": 37.6
+},
+{
+"text": "peur.",
+"type": "word",
+"start": 37.76,
+"end": 38.48
+},
+{
+"text": "Elle",
+"type": "word",
+"start": 38.507,
+"end": 38.56
+},
+{
+"text": "a",
+"type": "word",
+"start": 38.6,
+"end": 38.64
+},
+{
+"text": "la",
+"type": "word",
+"start": 38.72,
+"end": 38.8
+},
+{
+"text": "forme",
+"type": "word",
+"start": 38.92,
+"end": 39.04
+},
+{
+"text": "d'une",
+"type": "word",
+"start": 39.12,
+"end": 39.28
+},
+{
+"text": "amande,",
+"type": "word",
+"start": 39.36,
+"end": 39.84
+},
+{
+"text": "et",
+"type": "word",
+"start": 39.88,
+"end": 39.92
+},
+{
+"text": "c'est",
+"type": "word",
+"start": 39.96,
+"end": 40.08
+},
+{
+"text": "ton",
+"type": "word",
+"start": 40.16,
+"end": 40.24
+},
+{
+"text": "alarme",
+"type": "word",
+"start": 40.4,
+"end": 40.64
+},
+{
+"text": "de",
+"type": "word",
+"start": 40.68,
+"end": 40.72
+},
+{
+"text": "danger.",
+"type": "word",
+"start": 40.8,
+"end": 41.36
+},
+{
+"text": "Une",
+"type": "word",
+"start": 41.44,
+"end": 41.52
+},
+{
+"text": "patiente",
+"type": "word",
+"start": 41.6,
+"end": 41.92
+},
+{
+"text": "célèbre",
+"type": "word",
+"start": 41.96,
+"end": 42.4
+},
+{
+"text": "a",
+"type": "word",
+"start": 42.44,
+"end": 42.48
+},
+{
+"text": "l'amygdale",
+"type": "word",
+"start": 42.52,
+"end": 42.96
+},
+{
+"text": "endommagée…",
+"type": "word",
+"start": 43.04,
+"end": 43.84
+},
+{
+"text": "et",
+"type": "word",
+"start": 43.88,
+"end": 43.92
+},
+{
+"text": "elle",
+"type": "word",
+"start": 43.96,
+"end": 44.0
+},
+{
+"text": "ne",
+"type": "word",
+"start": 44.08,
+"end": 44.16
+},
+{
+"text": "ressent",
+"type": "word",
+"start": 44.28,
+"end": 44.56
+},
+{
+"text": "pratiquement",
+"type": "word",
+"start": 44.6,
+"end": 45.12
+},
+{
+"text": "pas",
+"type": "word",
+"start": 45.16,
+"end": 45.2
+},
+{
+"text": "la",
+"type": "word",
+"start": 45.28,
+"end": 45.36
+},
+{
+"text": "peur.",
+"type": "word",
+"start": 45.4,
+"end": 45.96
+},
+{
+"text": "Le",
+"type": "word",
+"start": 46.24,
+"end": 46.32
+},
+{
+"text": "cervelet",
+"type": "word",
+"start": 46.4,
+"end": 46.88
+},
+{
+"text": "l'équilibre.",
+"type": "word",
+"start": 47.28,
+"end": 47.84
+},
+{
+"text": "Il",
+"type": "word",
+"start": 48.08,
+"end": 48.16
+},
+{
+"text": "est",
+"type": "word",
+"start": 48.24,
+"end": 48.32
+},
+{
+"text": "petit,",
+"type": "word",
+"start": 48.44,
+"end": 48.88
+},
+{
+"text": "mais",
+"type": "word",
+"start": 48.92,
+"end": 49.0
+},
+{
+"text": "il",
+"type": "word",
+"start": 49.04,
+"end": 49.12
+},
+{
+"text": "a",
+"type": "word",
+"start": 49.2,
+"end": 49.28
+},
+{
+"text": "plus",
+"type": "word",
+"start": 49.4,
+"end": 49.52
+},
+{
+"text": "de",
+"type": "word",
+"start": 49.56,
+"end": 49.6
+},
+{
+"text": "neurones",
+"type": "word",
+"start": 49.68,
+"end": 50.0
+},
+{
+"text": "que",
+"type": "word",
+"start": 50.08,
+"end": 50.16
+},
+{
+"text": "tout",
+"type": "word",
+"start": 50.32,
+"end": 50.48
+},
+{
+"text": "le",
+"type": "word",
+"start": 50.52,
+"end": 50.56
+},
+{
+"text": "reste",
+"type": "word",
+"start": 50.64,
+"end": 50.88
+},
+{
+"text": "du",
+"type": "word",
+"start": 50.96,
+"end": 51.0
+},
+{
+"text": "cerveau",
+"type": "word",
+"start": 51.04,
+"end": 51.36
+},
+{
+"text": "réuni.",
+"type": "word",
+"start": 51.44,
+"end": 52.0
+},
+{
+"text": "Il",
+"type": "word",
+"start": 52.04,
+"end": 52.08
+},
+{
+"text": "coordonne",
+"type": "word",
+"start": 52.16,
+"end": 52.64
+},
+{
+"text": "tes",
+"type": "word",
+"start": 52.72,
+"end": 52.8
+},
+{
+"text": "mouvements,",
+"type": "word",
+"start": 52.827,
+"end": 53.28
+},
+{
+"text": "et",
+"type": "word",
+"start": 53.32,
+"end": 53.36
+},
+{
+"text": "c'est",
+"type": "word",
+"start": 53.413,
+"end": 53.52
+},
+{
+"text": "pour",
+"type": "word",
+"start": 53.56,
+"end": 53.6
+},
+{
+"text": "ça",
+"type": "word",
+"start": 53.68,
+"end": 53.76
+},
+{
+"text": "que",
+"type": "word",
+"start": 53.8,
+"end": 53.84
+},
+{
+"text": "tu",
+"type": "word",
+"start": 53.92,
+"end": 54.0
+},
+{
+"text": "ne",
+"type": "word",
+"start": 54.04,
+"end": 54.08
+},
+{
+"text": "peux",
+"type": "word",
+"start": 54.12,
+"end": 54.24
+},
+{
+"text": "pas",
+"type": "word",
+"start": 54.28,
+"end": 54.32
+},
+{
+"text": "te",
+"type": "word",
+"start": 54.4,
+"end": 54.48
+},
+{
+"text": "chatouiller",
+"type": "word",
+"start": 54.56,
+"end": 54.88
+},
+{
+"text": "toi-même",
+"type": "word",
+"start": 54.96,
+"end": 55.28
+},
+{
+"text": "il",
+"type": "word",
+"start": 55.627,
+"end": 55.68
+},
+{
+"text": "sait",
+"type": "word",
+"start": 55.76,
+"end": 55.92
+},
+{
+"text": "déjà",
+"type": "word",
+"start": 56.0,
+"end": 56.32
+},
+{
+"text": "ce",
+"type": "word",
+"start": 56.36,
+"end": 56.4
+},
+{
+"text": "que",
+"type": "word",
+"start": 56.48,
+"end": 56.56
+},
+{
+"text": "tu",
+"type": "word",
+"start": 56.64,
+"end": 56.68
+},
+{
+"text": "vas",
+"type": "word",
+"start": 56.72,
+"end": 56.8
+},
+{
+"text": "ressentir.",
+"type": "word",
+"start": 56.88,
+"end": 57.44
+},
+{
+"text": "L'hypothalamus",
+"type": "word",
+"start": 57.92,
+"end": 58.8
+},
+{
+"text": "le",
+"type": "word",
+"start": 59.093,
+"end": 59.12
+},
+{
+"text": "thermostat.",
+"type": "word",
+"start": 59.28,
+"end": 59.92
+},
+{
+"text": "Pas",
+"type": "word",
+"start": 60.16,
+"end": 60.24
+},
+{
+"text": "plus",
+"type": "word",
+"start": 60.32,
+"end": 60.4
+},
+{
+"text": "gros",
+"type": "word",
+"start": 60.48,
+"end": 60.56
+},
+{
+"text": "qu'une",
+"type": "word",
+"start": 60.64,
+"end": 60.8
+},
+{
+"text": "amande,",
+"type": "word",
+"start": 60.88,
+"end": 61.36
+},
+{
+"text": "il",
+"type": "word",
+"start": 61.44,
+"end": 61.52
+},
+{
+"text": "contrôle",
+"type": "word",
+"start": 61.68,
+"end": 62.0
+},
+{
+"text": "la",
+"type": "word",
+"start": 62.04,
+"end": 62.08
+},
+{
+"text": "faim,",
+"type": "word",
+"start": 62.24,
+"end": 62.64
+},
+{
+"text": "la",
+"type": "word",
+"start": 62.72,
+"end": 62.8
+},
+{
+"text": "soif,",
+"type": "word",
+"start": 62.88,
+"end": 63.44
+},
+{
+"text": "la",
+"type": "word",
+"start": 63.48,
+"end": 63.52
+},
+{
+"text": "température",
+"type": "word",
+"start": 63.6,
+"end": 64.32
+},
+{
+"text": "et",
+"type": "word",
+"start": 64.48,
+"end": 64.56
+},
+{
+"text": "ton",
+"type": "word",
+"start": 64.64,
+"end": 64.72
+},
+{
+"text": "horloge",
+"type": "word",
+"start": 64.8,
+"end": 65.12
+},
+{
+"text": "biologique.",
+"type": "word",
+"start": 65.16,
+"end": 65.96
+},
+{
+"text": "Le",
+"type": "word",
+"start": 66.24,
+"end": 66.32
+},
+{
+"text": "tronc",
+"type": "word",
+"start": 66.4,
+"end": 66.64
+},
+{
+"text": "cérébral",
+"type": "word",
+"start": 66.72,
+"end": 67.2
+},
+{
+"text": "le",
+"type": "word",
+"start": 67.56,
+"end": 67.6
+},
+{
+"text": "pilote",
+"type": "word",
+"start": 67.76,
+"end": 68.0
+},
+{
+"text": "automatique.",
+"type": "word",
+"start": 68.12,
+"end": 68.8
+},
+{
+"text": "Tu",
+"type": "word",
+"start": 68.96,
+"end": 69.04
+},
+{
+"text": "respires",
+"type": "word",
+"start": 69.16,
+"end": 69.68
+},
+{
+"text": "et",
+"type": "word",
+"start": 69.72,
+"end": 69.76
+},
+{
+"text": "ton",
+"type": "word",
+"start": 69.84,
+"end": 70.0
+},
+{
+"text": "cœur",
+"type": "word",
+"start": 70.08,
+"end": 70.24
+},
+{
+"text": "bat",
+"type": "word",
+"start": 70.32,
+"end": 70.56
+},
+{
+"text": "sans",
+"type": "word",
+"start": 70.64,
+"end": 70.72
+},
+{
+"text": "que",
+"type": "word",
+"start": 70.8,
+"end": 70.84
+},
+{
+"text": "tu",
+"type": "word",
+"start": 70.88,
+"end": 70.96
+},
+{
+"text": "y",
+"type": "word",
+"start": 71.04,
+"end": 71.12
+},
+{
+"text": "penses.",
+"type": "word",
+"start": 71.16,
+"end": 71.68
+},
+{
+"text": "C'est",
+"type": "word",
+"start": 71.733,
+"end": 71.84
+},
+{
+"text": "lui",
+"type": "word",
+"start": 71.88,
+"end": 72.0
+},
+{
+"text": "qui",
+"type": "word",
+"start": 72.08,
+"end": 72.16
+},
+{
+"text": "s'en",
+"type": "word",
+"start": 72.2,
+"end": 72.4
+},
+{
+"text": "charge,",
+"type": "word",
+"start": 72.56,
+"end": 72.96
+},
+{
+"text": "même",
+"type": "word",
+"start": 73.08,
+"end": 73.2
+},
+{
+"text": "pendant",
+"type": "word",
+"start": 73.28,
+"end": 73.44
+},
+{
+"text": "que",
+"type": "word",
+"start": 73.48,
+"end": 73.52
+},
+{
+"text": "tu",
+"type": "word",
+"start": 73.6,
+"end": 73.68
+},
+{
+"text": "dors.",
+"type": "word",
+"start": 73.76,
+"end": 74.24
+},
+{
+"text": "Et",
+"type": "word",
+"start": 74.28,
+"end": 74.32
+},
+{
+"text": "le",
+"type": "word",
+"start": 74.4,
+"end": 74.48
+},
+{
+"text": "plus",
+"type": "word",
+"start": 74.56,
+"end": 74.64
+},
+{
+"text": "fou",
+"type": "word",
+"start": 74.72,
+"end": 74.88
+},
+{
+"text": "ton",
+"type": "word",
+"start": 75.2,
+"end": 75.28
+},
+{
+"text": "cerveau",
+"type": "word",
+"start": 75.36,
+"end": 75.68
+},
+{
+"text": "ne",
+"type": "word",
+"start": 75.76,
+"end": 75.84
+},
+{
+"text": "ressent",
+"type": "word",
+"start": 75.92,
+"end": 76.32
+},
+{
+"text": "pas",
+"type": "word",
+"start": 76.36,
+"end": 76.4
+},
+{
+"text": "la",
+"type": "word",
+"start": 76.44,
+"end": 76.48
+},
+{
+"text": "douleur.",
+"type": "word",
+"start": 76.56,
+"end": 77.2
+},
+{
+"text": "C'est",
+"type": "word",
+"start": 77.227,
+"end": 77.28
+},
+{
+"text": "pour",
+"type": "word",
+"start": 77.36,
+"end": 77.44
+},
+{
+"text": "ça",
+"type": "word",
+"start": 77.52,
+"end": 77.6
+},
+{
+"text": "que",
+"type": "word",
+"start": 77.68,
+"end": 77.76
+},
+{
+"text": "certaines",
+"type": "word",
+"start": 77.84,
+"end": 78.08
+},
+{
+"text": "personnes",
+"type": "word",
+"start": 78.16,
+"end": 78.48
+},
+{
+"text": "se",
+"type": "word",
+"start": 78.56,
+"end": 78.64
+},
+{
+"text": "font",
+"type": "word",
+"start": 78.72,
+"end": 78.8
+},
+{
+"text": "opérer",
+"type": "word",
+"start": 78.88,
+"end": 79.28
+},
+{
+"text": "éveillées.",
+"type": "word",
+"start": 79.36,
+"end": 80.0
+},
+{
+"text": "Abonne-toi",
+"type": "word",
+"start": 80.08,
+"end": 80.48
+},
+{
+"text": "pour",
+"type": "word",
+"start": 80.64,
+"end": 80.72
+},
+{
+"text": "en",
+"type": "word",
+"start": 80.76,
+"end": 80.8
+},
+{
+"text": "savoir",
+"type": "word",
+"start": 80.88,
+"end": 81.12
+},
+{
+"text": "plus.",
+"type": "word",
+"start": 81.28,
+"end": 81.68
+}
+]
