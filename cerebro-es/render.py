@@ -66,8 +66,12 @@ SCENES = [
     (T["cierre"], "09", "LO MÁS LOCO…", "", "in"),
 ]
 # golpes de zoom en momentos clave
-PUNCHES = [T["20"], T["25"], T["londres"], T["paciente"], T["cosquillas"], at("dolor")]
-TRANS = 0.4  # duración de la transición (s)
+# v2 : un seul moment fort dans toute la vidéo
+PUNCHES = [at("dolor")]
+DIP = 0.28  # fondu au noir court entre les scènes (s), une seule sorte de transition
+# point d'intérêt de chaque planche (x, y en fraction de l'image) : la caméra va vers le sujet
+FOCUS = {"01": (0.42, 0.33), "02": (0.33, 0.40), "03": (0.70, 0.32), "04": (0.36, 0.45), "05": (0.62, 0.55),
+         "06": (0.38, 0.45), "07": (0.45, 0.52), "08": (0.50, 0.40), "09": (0.50, 0.55)}
 print({k: round(v, 2) for k, v in T.items()}, "duración", round(DUR, 2))
 
 # ---------- recursos ----------
@@ -92,7 +96,12 @@ IMGS = {}
 for _, key, *_ in SCENES:
     im = Image.open(HERE / "imagenes" / f"{key}.png").convert("RGB")
     s = max(W / im.width, H / im.height) * ZOOM_BASE
-    IMGS[key] = im.resize((int(im.width * s), int(im.height * s)), Image.LANCZOS)
+    im = im.resize((int(im.width * s), int(im.height * s)), Image.LANCZOS)
+    # halation : léger halo chaud autour des zones claires
+    hi = im.convert("L").point(lambda v: max(0, v - 150) * 2).filter(ImageFilter.GaussianBlur(18))
+    warm = Image.merge("RGB", (hi, hi.point(lambda v: int(v * 0.55)), hi.point(lambda v: int(v * 0.25))))
+    a = np.asarray(im).astype(np.float32) + np.asarray(warm).astype(np.float32) * 0.18
+    IMGS[key] = Image.fromarray(a.clip(0, 255).astype(np.uint8))
 
 rng = np.random.default_rng(7)
 GRAIN = [Image.fromarray((rng.normal(0, 22, (H // 2, W // 2))).clip(-60, 60).astype(np.int16).astype(np.uint8) + 128)
@@ -108,7 +117,12 @@ VIGNETTE = (VIGNETTE * _top * _bot)[..., None].astype(np.float32)
 
 def ease(x):
     x = max(0.0, min(1.0, x))
-    return x * x * (3 - 2 * x)
+    return 4 * x ** 3 if x < .5 else 1 - (-2 * x + 2) ** 3 / 2
+
+
+def noise1(t, seed):
+    """Bruit lisse : remplace le tremblement aléatoire image par image."""
+    return (math.sin(t * 0.9 + seed) + 0.5 * math.sin(t * 2.3 + seed * 2.1) + 0.25 * math.sin(t * 4.7 + seed * 3.7)) / 1.75
 
 
 def scene_at(t):
@@ -126,34 +140,21 @@ def camera(idx, t):
     p = ease((t - start) / max(end - start, 0.1))
     img = IMGS[SCENES[idx][1]]
     mode = SCENES[idx][4]
-    z = 1.0
-    dx = dy = 0.0
-    if mode == "in":
-        z = 1.0 + 0.14 * p
-    elif mode == "out":
-        z = 1.14 - 0.14 * p
-    elif mode == "pan_r":
-        z, dx = 1.06, -1 + 2 * p
-    elif mode == "pan_l":
-        z, dx = 1.06, 1 - 2 * p
-    elif mode == "up":
-        z, dy = 1.06, 1 - 2 * p
-    elif mode == "down":
-        z, dy = 1.06, -1 + 2 * p
-    # golpe de zoom
+    fx, fy = FOCUS[SCENES[idx][1]]
+    # « in » : on s'approche du sujet ; sinon on part du sujet et on recule doucement
+    k = p if mode in ("in", "pan_r", "up") else 1 - p
+    z = 1.0 + 0.12 * k
     for pt in PUNCHES:
-        if start <= pt < end and 0 <= t - pt < 0.6:
-            k = (t - pt) / 0.6
-            z *= 1 + 0.07 * math.sin(math.pi * min(1, k * 2)) * (1 - k)
+        if start <= pt < end and 0 <= t - pt:
+            z *= 1 + 0.05 * ease((t - pt) / 1.2)
     cw, ch = W / z, H / z
-    mx, my = (img.width - cw) / 2, (img.height - ch) / 2
-    cx = img.width / 2 + dx * mx * 0.9
-    cy = img.height / 2 + dy * my * 0.9
-    # temblor de proyector
-    f = int(t * FPS)
-    r = random.Random(f // 2)
-    cx += r.uniform(-4, 4) / z * (img.width / W)
-    cy += r.uniform(-6, 6) / z * (img.height / H)
+    cx = img.width / 2 + (fx * img.width - img.width / 2) * k * 0.8
+    cy = img.height / 2 + (fy * img.height - img.height / 2) * k * 0.8
+    # gate weave : dérive lente de 1–2 px
+    cx += 1.5 * noise1(t * 1.3, 11) * (img.width / W)
+    cy += 2.0 * noise1(t * 1.1, 23) * (img.height / H)
+    cx = min(max(cx, cw / 2), img.width - cw / 2)
+    cy = min(max(cy, ch / 2), img.height - ch / 2)
     box = (cx - cw / 2, cy - ch / 2, cx + cw / 2, cy + ch / 2)
     return img.resize((W, H), Image.BILINEAR, box=box)
 
@@ -163,16 +164,18 @@ def film_fx(img, t):
     r = random.Random(f * 31 + 1)
     a = np.asarray(img).astype(np.float32)
     # parpadeo + grano + viñeta
-    a *= r.uniform(0.9, 1.04)
-    a += (np.asarray(GRAIN[f % len(GRAIN)]).astype(np.float32)[..., None] - 128) * 0.55
+    a *= 1 + 0.025 * noise1(t * 5, 3)
+    a += (np.asarray(GRAIN[f % len(GRAIN)]).astype(np.float32)[..., None] - 128) * 0.3
     a *= VIGNETTE
     out = Image.fromarray(a.clip(0, 255).astype(np.uint8))
     d = ImageDraw.Draw(out)
     # rayas verticales y polvo
-    if r.random() < 0.35:
-        x = r.randint(60, W - 60)
-        d.line([(x, 0), (x + r.randint(-20, 20), H)], fill=(230, 220, 200) if r.random() < .5 else (30, 25, 20), width=r.choice([1, 2, 2, 3]))
-    for _ in range(r.randint(0, 5)):
+    # une rayure rare, qui dure quelques images au même endroit
+    rs = random.Random(f // 6)
+    if rs.random() < 0.05:
+        x = rs.randint(120, W - 120) + int(3 * noise1(t * 4, 5))
+        d.line([(x, 0), (x + rs.randint(-8, 8), H)], fill=(205, 195, 175), width=1)
+    for _ in range(r.choice([0, 0, 0, 1, 1, 2])):
         x, y, s = r.randint(0, W), r.randint(0, H), r.randint(2, 7)
         d.ellipse((x, y, x + s, y + s * r.uniform(.5, 1.5)), fill=(15, 12, 10) if r.random() < .7 else (235, 225, 205))
     return out
@@ -194,8 +197,17 @@ def spaced(d, y, txt, size, fill=CREAM, spacing=8, stroke=6):
         x += cw + spacing
 
 
+def sepia(e):
+    """Emoji en sépia pour rester dans l'époque."""
+    g = e.convert("L")
+    rgb_ = Image.merge("RGB", (g.point(lambda v: int(40 + v * 0.82)), g.point(lambda v: int(30 + v * 0.7)),
+                              g.point(lambda v: int(20 + v * 0.52))))
+    rgb_.putalpha(e.getchannel("A"))
+    return rgb_
+
+
 def paste_emoji(img, ch, size, cx, cy, alpha=1.0):
-    e = emoji(ch, size)
+    e = sepia(emoji(ch, size))
     if alpha < 1:
         e = e.copy(); e.putalpha(e.getchannel("A").point(lambda v: int(v * alpha)))
     img.paste(e, (int(cx - e.width / 2), int(cy - e.height / 2)), e)
@@ -257,10 +269,10 @@ def overlays(img, d, idx, t):
         text_c(d, 1305, "hipocampo más grande", 76, fill=AMBER)
     elif key == "05":
         # almendra que parpadea en rojo
-        blink = 0.5 + 0.5 * math.sin(local * 9)
-        glow = Image.new("RGB", (W, H), (200, 20, 20))
+        blink = 0.5 + 0.5 * math.sin(local * 4)
+        glow = Image.new("RGB", (W, H), (170, 40, 25))
         m = Image.new("L", (W, H), 0)
-        ImageDraw.Draw(m).ellipse((W / 2 - 90, 1170, W / 2 + 90, 1290), fill=int(110 * blink))
+        ImageDraw.Draw(m).ellipse((W / 2 - 90, 1170, W / 2 + 90, 1290), fill=int(70 * blink))
         img.paste(glow, (0, 0), m.filter(ImageFilter.GaussianBlur(25)))
         text_c(d, 1190, "alarma de peligro", 76, fill=(255, 120, 100))
     elif key == "06" and t > T["cosquillas"] - 1.2:
@@ -278,25 +290,21 @@ def overlays(img, d, idx, t):
 
 
 def transition(t):
-    """Fogonazo + deslizamiento vertical de la película entre escenas."""
+    """Fondu au noir court autour de chaque changement de planche (0 = noir, 1 = normal)."""
+    v = 1.0
     for s in SCENES[1:]:
-        dt = t - s[0]
-        if -TRANS / 2 <= dt < TRANS / 2:
-            k = 1 - abs(dt) / (TRANS / 2)
-            return k, dt
-    return 0.0, 0.0
+        dt = abs(t - s[0])
+        if dt < DIP:
+            v = min(v, ease(dt / DIP))
+    return v
 
 
 def frame(t):
     idx = scene_at(t)
     img = camera(idx, t)
-    k, dt = transition(t)
-    if k > 0:
-        # la película "salta": la imagen se desliza verticalmente con un fotograma negro
-        shift = int((dt / (TRANS / 2)) * H * 0.18)
-        canvas = Image.new("RGB", (W, H), (8, 6, 4))
-        canvas.paste(img, (0, shift))
-        img = Image.blend(canvas, Image.new("RGB", (W, H), (255, 244, 220)), 0.55 * k)
+    v = transition(t)
+    if v < 1:
+        img = Image.blend(Image.new("RGB", (W, H), (6, 5, 4)), img, v)
     img = film_fx(img, t)
     d = ImageDraw.Draw(img)
     overlays(img, d, idx, t)
@@ -308,12 +316,12 @@ def main():
     if len(sys.argv) > 1:
         frame(float(sys.argv[1])).save(HERE / "preview.png")
         return
-    out = HERE / "cerebro_es.mp4"
+    out = HERE / "cerebro_es_v2.mp4"
     n = int(DUR * FPS)
     p = subprocess.Popen([
         "ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
         "-r", str(FPS), "-i", "-", "-i", str(HERE / "narracion.mp3"),
-        "-c:v", "libx264", "-preset", "medium", "-crf", "23", "-maxrate", "4.5M", "-bufsize", "9M", "-pix_fmt", "yuv420p",
+        "-c:v", "libx264", "-preset", "medium", "-crf", "24", "-maxrate", "3.8M", "-bufsize", "7.6M", "-pix_fmt", "yuv420p",
         "-af", "apad", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", str(out)],
         stdin=subprocess.PIPE)
     for i in range(n):
