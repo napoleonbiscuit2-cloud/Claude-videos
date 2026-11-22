@@ -24,6 +24,10 @@
 7. Donner de la **profondeur** : parallaxe 2.5D (DepthFlow / Depth Anything) avant de passer à l'IA image → vidéo.
 8. Accroche : du mouvement et le point principal dès les **3 premières secondes**.
 
+## Logo de la chaîne
+- Logo final dessiné **en code** (sans IA) : `logo/dessin_logo.py` → `logo/logo_main*.png`.
+- Style voulu par l'utilisateur : **simple, 3 couleurs** (brun biscuit, blanc, turquoise), pas de contours épais, aspect « fait main ». Les logos ElevenLabs (`logo_1..4`) servent seulement de croquis.
+
 ## Technique
 - Sorties lourdes : réencoder (`-crf 23 -maxrate 4.5M`) pour rester sous ~50 Mo (limite conseillée par GitHub).
 - Le réseau de l'environnement « Claude-videos » autorise `elevenlabsusercontent.com`, `www.youtube.com`, `i.ytimg.com`.
