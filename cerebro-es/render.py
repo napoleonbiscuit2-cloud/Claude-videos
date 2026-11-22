@@ -99,7 +99,11 @@ GRAIN = [Image.fromarray((rng.normal(0, 22, (H // 2, W // 2))).clip(-60, 60).ast
          .resize((W, H)) for _ in range(6)]
 yy, xx = np.mgrid[0:H, 0:W]
 _v = np.sqrt(((xx - W / 2) / (W / 2)) ** 2 + ((yy - H / 2) / (H / 2)) ** 2)
-VIGNETTE = np.clip(1.15 - 0.55 * _v ** 2, 0.25, 1.0)[..., None].astype(np.float32)
+VIGNETTE = np.clip(1.15 - 0.55 * _v ** 2, 0.25, 1.0)
+# bandas oscuras para que se lean títulos y subtítulos
+_top = np.clip(0.35 + 0.65 * (yy / 420), 0, 1)
+_bot = np.clip(1 - 0.62 * (yy - 1080) / 500, 0.38, 1)
+VIGNETTE = (VIGNETTE * _top * _bot)[..., None].astype(np.float32)
 
 
 def ease(x):
@@ -239,11 +243,12 @@ def overlays(img, d, idx, t):
     if p > 0:
         spaced(d, 150 - int(30 * (1 - p)), title, int(84 * (0.85 + 0.15 * p)))
         if sub:
-            text_c(d, 255, f"— {sub} —", 58, fill=AMBER)
+            text_c(d, 255, f"— {sub} —", 64, fill=AMBER)
     if key == "01" and t > 1.3:
         text_c(d, 1150, "2% del peso", 84)
         if t > T["20"] - 0.2:
-            text_c(d, 1250, "→ 20% de la energía", 84, fill=AMBER)
+            text_c(d, 1250, "20% de la energía", 84, fill=AMBER)
+            paste_emoji(img, "⚡", 90, W / 2, 1400)
     elif key == "02" and t > T["25"] - 0.2:
         text_c(d, 1200, "Madura a los 25 años", 76, fill=AMBER)
     elif key == "04" and t > T["londres"] - 0.2:
@@ -260,8 +265,8 @@ def overlays(img, d, idx, t):
         text_c(d, 1190, "alarma de peligro", 76, fill=(255, 120, 100))
     elif key == "06" and t > T["cosquillas"] - 1.2:
         text_c(d, 1150, "¿Por qué no te puedes", 70, fill=AMBER)
-        text_c(d, 1235, "hacer cosquillas? 🤔"[:-2], 70, fill=AMBER)
-        paste_emoji(img, "🤔", 80, W / 2 + 300, 1280)
+        text_c(d, 1235, "hacer cosquillas?", 70, fill=AMBER)
+        paste_emoji(img, "🤔", 80, W / 2, 1375)
     elif key == "07":
         for i, (ch, tk) in enumerate([("🍔", "hambre"), ("💧", "sed"), ("🌡️", "temp"), ("⏰", "reloj")]):
             k = ease((t - T[tk] + 0.1) / 0.25)
@@ -308,7 +313,7 @@ def main():
     p = subprocess.Popen([
         "ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24", "-s", f"{W}x{H}",
         "-r", str(FPS), "-i", "-", "-i", str(HERE / "narracion.mp3"),
-        "-c:v", "libx264", "-preset", "medium", "-crf", "20", "-pix_fmt", "yuv420p",
+        "-c:v", "libx264", "-preset", "medium", "-crf", "23", "-maxrate", "4.5M", "-bufsize", "9M", "-pix_fmt", "yuv420p",
         "-af", "apad", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", str(out)],
         stdin=subprocess.PIPE)
     for i in range(n):
